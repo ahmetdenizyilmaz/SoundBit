@@ -1,0 +1,307 @@
+{
+  "format": "soundbit-presets",
+  "format_version": 1,
+  "source": "SoundBit Headless Fork (ahmetdenizyilmaz): Generalized Video-Mechanism & Explainer Movement-to-Sound Trigger Presets, GPL-3.0-or-later",
+  "presets": [
+    {
+      "id": "trig_minimal_sub_pulse",
+      "category": "bass",
+      "description": "Low-harmonic warm triangle sub-bass ostinato (H2/H1 < 0.16) that anchors minimalist 3-chord loops while leaving 300-8000 Hz wide open for visual sound triggers.",
+      "instrument": {
+        "name": "Trigger Minimal Sub Pulse",
+        "voice": {
+          "type": "triangle"
+        },
+        "envelope": {
+          "attack": 3,
+          "decay": 240,
+          "sustain": 72,
+          "release": 130
+        },
+        "pitch_envelope": {
+          "semitones": 12,
+          "time": 32
+        },
+        "filter": {
+          "mode": "low_pass",
+          "cutoff": 260,
+          "resonance": 24,
+          "envelope_depth": 18
+        },
+        "volume": 86,
+        "pan": 0,
+        "reverb_send": 0
+      }
+    },
+    {
+      "id": "trig_velvet_chord_pluck",
+      "category": "keys",
+      "description": "Soft low-pass filtered half-pulse ostinato pluck matching minimalist science-explainer harmonic beds.",
+      "instrument": {
+        "name": "Trigger Velvet Ostinato Pluck",
+        "voice": {
+          "type": "pulse",
+          "duty": "half"
+        },
+        "envelope": {
+          "attack": 4,
+          "decay": 220,
+          "sustain": 28,
+          "release": 190
+        },
+        "unison": {
+          "voices": 2,
+          "detune": 9
+        },
+        "filter": {
+          "mode": "low_pass",
+          "cutoff": 920,
+          "resonance": 18,
+          "envelope_depth": 22
+        },
+        "volume": 60,
+        "pan": 0,
+        "reverb_send": 34
+      }
+    },
+    {
+      "id": "trig_zoom_sweep_pure",
+      "category": "sfx",
+      "description": "Smooth pure-fundamental glide voice for continuous 1-to-2 octave upward/downward camera zoom pitch sweeps.",
+      "instrument": {
+        "name": "Trigger Camera Zoom Sweep",
+        "voice": {
+          "type": "triangle"
+        },
+        "envelope": {
+          "attack": 18,
+          "decay": 360,
+          "sustain": 74,
+          "release": 160
+        },
+        "unison": {
+          "voices": 2,
+          "detune": 8
+        },
+        "filter": {
+          "mode": "low_pass",
+          "cutoff": 1800,
+          "resonance": 32,
+          "envelope_depth": 26
+        },
+        "volume": 72,
+        "pan": 0,
+        "reverb_send": 28
+      }
+    },
+    {
+      "id": "trig_whoosh_air_burst",
+      "category": "percussion",
+      "description": "Filtered air/radiation noise whoosh synced to fast zoom transitions, particle beams, and energy emissions.",
+      "instrument": {
+        "name": "Trigger Air & Beam Whoosh",
+        "voice": {
+          "type": "noise",
+          "mode": "long"
+        },
+        "envelope": {
+          "attack": 22,
+          "decay": 280,
+          "sustain": 24,
+          "release": 160
+        },
+        "filter": {
+          "mode": "band_pass",
+          "cutoff": 2400,
+          "resonance": 34,
+          "envelope_depth": 36
+        },
+        "volume": 58,
+        "pan": 0,
+        "reverb_send": 32
+      }
+    },
+    {
+      "id": "trig_ui_text_tick",
+      "category": "percussion",
+      "description": "Ultra-crisp 20ms high-frequency mechanical tick for HUD text typing, telemetry counters, and label reveals.",
+      "instrument": {
+        "name": "Trigger HUD Text Tick",
+        "voice": {
+          "type": "noise",
+          "mode": "short"
+        },
+        "envelope": {
+          "attack": 1,
+          "decay": 22,
+          "sustain": 0,
+          "release": 14
+        },
+        "pitch_envelope": {
+          "semitones": 12,
+          "time": 12
+        },
+        "filter": {
+          "mode": "band_pass",
+          "cutoff": 3100,
+          "resonance": 45,
+          "envelope_depth": 15
+        },
+        "volume": 56,
+        "pan": 0,
+        "reverb_send": 10
+      }
+    },
+    {
+      "id": "trig_confirm_chime",
+      "category": "keys",
+      "description": "Clean glassy FM confirmation chime for UI status checkmarks, button presses, and system activations.",
+      "instrument": {
+        "name": "Trigger UI Confirm Chime",
+        "voice": {
+          "type": "fm",
+          "algorithm": 4,
+          "feedback": 1,
+          "operators": [
+            {
+              "multiple": 2,
+              "detune": 0,
+              "total_level": 28,
+              "attack_rate": 31,
+              "decay_rate": 14,
+              "sustain_rate": 1,
+              "sustain_level": 6,
+              "release_rate": 9
+            },
+            {
+              "multiple": 1,
+              "detune": 0,
+              "total_level": 0,
+              "attack_rate": 31,
+              "decay_rate": 10,
+              "sustain_rate": 1,
+              "sustain_level": 4,
+              "release_rate": 8
+            },
+            {
+              "multiple": 3,
+              "detune": 1,
+              "total_level": 40,
+              "attack_rate": 31,
+              "decay_rate": 16,
+              "sustain_rate": 1,
+              "sustain_level": 8,
+              "release_rate": 9
+            },
+            {
+              "multiple": 1,
+              "detune": -1,
+              "total_level": 8,
+              "attack_rate": 31,
+              "decay_rate": 10,
+              "sustain_rate": 1,
+              "sustain_level": 4,
+              "release_rate": 8
+            }
+          ]
+        },
+        "volume": 64,
+        "pan": 0,
+        "reverb_send": 36
+      }
+    },
+    {
+      "id": "trig_micro_droplet_ping",
+      "category": "sfx",
+      "description": "Upward-chirping crystalline droplet/ionization ping for microscopic particle collisions, molecules, and sparks.",
+      "instrument": {
+        "name": "Trigger Micro Particle Ping",
+        "voice": {
+          "type": "fm",
+          "algorithm": 4,
+          "feedback": 0,
+          "operators": [
+            {
+              "multiple": 2,
+              "detune": 0,
+              "total_level": 34,
+              "attack_rate": 31,
+              "decay_rate": 16,
+              "sustain_rate": 1,
+              "sustain_level": 8,
+              "release_rate": 9
+            },
+            {
+              "multiple": 1,
+              "detune": 0,
+              "total_level": 0,
+              "attack_rate": 31,
+              "decay_rate": 11,
+              "sustain_rate": 1,
+              "sustain_level": 5,
+              "release_rate": 8
+            },
+            {
+              "multiple": 4,
+              "detune": 0,
+              "total_level": 48,
+              "attack_rate": 31,
+              "decay_rate": 20,
+              "sustain_rate": 0,
+              "sustain_level": 12,
+              "release_rate": 10
+            },
+            {
+              "multiple": 1,
+              "detune": 1,
+              "total_level": 10,
+              "attack_rate": 31,
+              "decay_rate": 11,
+              "sustain_rate": 1,
+              "sustain_level": 5,
+              "release_rate": 8
+            }
+          ]
+        },
+        "pitch_envelope": {
+          "semitones": -7,
+          "time": 42
+        },
+        "volume": 66,
+        "pan": 0,
+        "reverb_send": 48
+      }
+    },
+    {
+      "id": "trig_stepped_mech_pop",
+      "category": "sfx",
+      "description": "Tactile 75ms stepped mechanism/cell pop pluck for repeating sub-part motions (collimator blades, gears, grid steps, shrinking/growing cells).",
+      "instrument": {
+        "name": "Trigger Stepped Mechanism Pop",
+        "voice": {
+          "type": "pulse",
+          "duty": "half"
+        },
+        "envelope": {
+          "attack": 1,
+          "decay": 78,
+          "sustain": 10,
+          "release": 48
+        },
+        "pitch_envelope": {
+          "semitones": 7,
+          "time": 24
+        },
+        "filter": {
+          "mode": "low_pass",
+          "cutoff": 1480,
+          "resonance": 36,
+          "envelope_depth": 24
+        },
+        "volume": 66,
+        "pan": 0,
+        "reverb_send": 20
+      }
+    }
+  ]
+}
