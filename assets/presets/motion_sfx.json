@@ -6,75 +6,77 @@
     {
       "id": "sfx_zoom_in_riser",
       "category": "sfx",
-      "description": "Upward 2-octave pitch sweep with opening resonant filter synced to camera zoom-ins.",
+      "description": "Musically consonant resonant filter-opening unison swell designed to pair with chord-locked upward slide_semitones (+5/+7/+12) on camera zoom-ins.",
       "instrument": {
-        "name": "Zoom-In Riser",
+        "name": "Zoom-In Harmonic Swell",
         "voice": {
           "type": "sawtooth"
         },
         "envelope": {
-          "attack": 10,
-          "decay": 360,
-          "sustain": 70,
-          "release": 140
+          "attack": 55,
+          "decay": 420,
+          "sustain": 76,
+          "release": 200
         },
-        "pitch_envelope": {
-          "semitones": -24,
-          "time": 320
+        "vibrato": {
+          "depth": 18,
+          "rate": 52,
+          "delay": 100
         },
         "unison": {
           "voices": 3,
-          "detune": 20
+          "detune": 16
         },
         "filter": {
           "mode": "low_pass",
-          "cutoff": 700,
-          "resonance": 50,
-          "envelope_depth": 44
+          "cutoff": 520,
+          "resonance": 44,
+          "envelope_depth": 52
         },
-        "volume": 66,
+        "volume": 62,
         "pan": 0,
-        "reverb_send": 30
+        "reverb_send": 34
       }
     },
     {
       "id": "sfx_zoom_out_fall",
       "category": "sfx",
-      "description": "Downward 2-octave pitch dive with closing filter synced to camera zoom-outs.",
+      "description": "Musically consonant closing-filter unison release designed to pair with chord-locked downward slide_semitones (-5/-7/-12) on camera zoom-outs.",
       "instrument": {
-        "name": "Zoom-Out Fall",
+        "name": "Zoom-Out Harmonic Release",
         "voice": {
           "type": "sawtooth"
         },
         "envelope": {
-          "attack": 2,
-          "decay": 340,
-          "sustain": 55,
-          "release": 140
+          "attack": 10,
+          "decay": 420,
+          "sustain": 52,
+          "release": 200
         },
-        "pitch_envelope": {
-          "semitones": 24,
-          "time": 300
+        "vibrato": {
+          "depth": 16,
+          "rate": 48,
+          "delay": 90
         },
         "unison": {
           "voices": 3,
-          "detune": 18
+          "detune": 15
         },
         "filter": {
           "mode": "low_pass",
-          "cutoff": 1600,
-          "resonance": 45,
-          "envelope_depth": -32
+          "cutoff": 2100,
+          "resonance": 40,
+          "envelope_depth": -44
         },
-        "volume": 66,
+        "volume": 62,
         "pan": 0,
-        "reverb_send": 28
+        "reverb_send": 34
       }
     },
     {
       "id": "sfx_object_inflate",
       "category": "sfx",
-      "description": "Expanding warm harmonic swell (+12 semitone rise + unison bloom) for growing/inflating objects.",
+      "description": "Expanding warm harmonic swell (+12 semitone pure-octave rise + unison bloom) for growing/inflating objects.",
       "instrument": {
         "name": "Object Inflate Swell",
         "voice": {
@@ -82,59 +84,59 @@
           "duty": "half"
         },
         "envelope": {
-          "attack": 15,
-          "decay": 260,
+          "attack": 25,
+          "decay": 280,
           "sustain": 68,
-          "release": 150
+          "release": 180
         },
         "pitch_envelope": {
           "semitones": -12,
-          "time": 220
+          "time": 190
         },
         "unison": {
           "voices": 4,
-          "detune": 26
+          "detune": 20
         },
         "filter": {
           "mode": "low_pass",
-          "cutoff": 900,
-          "resonance": 40,
-          "envelope_depth": 38
+          "cutoff": 850,
+          "resonance": 36,
+          "envelope_depth": 40
         },
-        "volume": 65,
+        "volume": 62,
         "pan": 0,
-        "reverb_send": 25
+        "reverb_send": 30
       }
     },
     {
       "id": "sfx_object_shrink",
       "category": "sfx",
-      "description": "Snappy contracting pitch zip (+19 semitone drop into tight pluck) for shrinking/collapsing objects.",
+      "description": "Consonant contracting octave pluck (+12 semitone pure-octave drop into tight pulse pluck) for shrinking objects.",
       "instrument": {
-        "name": "Object Shrink Zip",
+        "name": "Object Shrink Pluck",
         "voice": {
           "type": "pulse",
           "duty": "quarter"
         },
         "envelope": {
-          "attack": 1,
-          "decay": 150,
-          "sustain": 15,
-          "release": 70
+          "attack": 2,
+          "decay": 170,
+          "sustain": 18,
+          "release": 95
         },
         "pitch_envelope": {
-          "semitones": 19,
-          "time": 110
+          "semitones": 12,
+          "time": 100
         },
         "filter": {
           "mode": "low_pass",
-          "cutoff": 1800,
-          "resonance": 55,
-          "envelope_depth": -28
+          "cutoff": 1900,
+          "resonance": 42,
+          "envelope_depth": -30
         },
-        "volume": 68,
+        "volume": 64,
         "pan": 0,
-        "reverb_send": 15
+        "reverb_send": 22
       }
     },
     {

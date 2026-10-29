@@ -1,0 +1,363 @@
+{
+  "format": "soundbit-presets",
+  "format_version": 1,
+  "source": "SoundBit Headless Fork (ahmetdenizyilmaz): NEC PC-9801-86 (Yamaha YM2608 OPNA) 4-Op FM & SSG Cyber-Anime collection, GPL-3.0-or-later",
+  "presets": [
+    {
+      "id": "pc98_opna_brass_lead",
+      "category": "lead",
+      "description": "Classic NEC PC-9801 YM2608 4-operator FM cyber-brass lead (Ryu Umemoto / Yuzo Koshiro style) with crisp FM bite and delayed vibrato.",
+      "instrument": {
+        "name": "PC-98 OPNA Brass Lead",
+        "voice": {
+          "type": "fm",
+          "algorithm": 4,
+          "feedback": 5,
+          "operators": [
+            {
+              "multiple": 1,
+              "detune": 1,
+              "total_level": 22,
+              "attack_rate": 29,
+              "decay_rate": 9,
+              "sustain_rate": 1,
+              "sustain_level": 4,
+              "release_rate": 8
+            },
+            {
+              "multiple": 1,
+              "detune": 0,
+              "total_level": 0,
+              "attack_rate": 31,
+              "decay_rate": 5,
+              "sustain_rate": 1,
+              "sustain_level": 2,
+              "release_rate": 8
+            },
+            {
+              "multiple": 2,
+              "detune": -1,
+              "total_level": 28,
+              "attack_rate": 28,
+              "decay_rate": 11,
+              "sustain_rate": 1,
+              "sustain_level": 5,
+              "release_rate": 8
+            },
+            {
+              "multiple": 1,
+              "detune": -2,
+              "total_level": 6,
+              "attack_rate": 30,
+              "decay_rate": 5,
+              "sustain_rate": 1,
+              "sustain_level": 2,
+              "release_rate": 8
+            }
+          ]
+        },
+        "vibrato": {
+          "depth": 20,
+          "rate": 56,
+          "delay": 140
+        },
+        "unison": {
+          "voices": 2,
+          "detune": 10
+        },
+        "volume": 64,
+        "pan": 0,
+        "reverb_send": 30
+      }
+    },
+    {
+      "id": "pc98_opna_slap_bass",
+      "category": "bass",
+      "description": "Punchy NEC PC-9801 YM2608 metallic FM slap bass for driving 16th-note cyberpunk grooves.",
+      "instrument": {
+        "name": "PC-98 OPNA Slap Bass",
+        "voice": {
+          "type": "fm",
+          "algorithm": 4,
+          "feedback": 5,
+          "operators": [
+            {
+              "multiple": 1,
+              "detune": 0,
+              "total_level": 20,
+              "attack_rate": 31,
+              "decay_rate": 14,
+              "sustain_rate": 2,
+              "sustain_level": 6,
+              "release_rate": 11
+            },
+            {
+              "multiple": 1,
+              "detune": 0,
+              "total_level": 0,
+              "attack_rate": 31,
+              "decay_rate": 7,
+              "sustain_rate": 2,
+              "sustain_level": 3,
+              "release_rate": 10
+            },
+            {
+              "multiple": 3,
+              "detune": 1,
+              "total_level": 34,
+              "attack_rate": 31,
+              "decay_rate": 17,
+              "sustain_rate": 2,
+              "sustain_level": 9,
+              "release_rate": 11
+            },
+            {
+              "multiple": 1,
+              "detune": -1,
+              "total_level": 8,
+              "attack_rate": 31,
+              "decay_rate": 7,
+              "sustain_rate": 2,
+              "sustain_level": 3,
+              "release_rate": 10
+            }
+          ]
+        },
+        "volume": 72,
+        "pan": 0,
+        "reverb_send": 0
+      }
+    },
+    {
+      "id": "pc98_opna_glass_arp",
+      "category": "keys",
+      "description": "Crystalline YM2608 digital FM bell-harp pluck tailored for rapid zoom-in climbs and zoom-out waterfall arpeggios.",
+      "instrument": {
+        "name": "PC-98 OPNA Glass Arp",
+        "voice": {
+          "type": "fm",
+          "algorithm": 4,
+          "feedback": 2,
+          "operators": [
+            {
+              "multiple": 2,
+              "detune": 1,
+              "total_level": 26,
+              "attack_rate": 31,
+              "decay_rate": 12,
+              "sustain_rate": 1,
+              "sustain_level": 6,
+              "release_rate": 9
+            },
+            {
+              "multiple": 1,
+              "detune": 0,
+              "total_level": 0,
+              "attack_rate": 31,
+              "decay_rate": 9,
+              "sustain_rate": 1,
+              "sustain_level": 4,
+              "release_rate": 8
+            },
+            {
+              "multiple": 4,
+              "detune": -1,
+              "total_level": 36,
+              "attack_rate": 31,
+              "decay_rate": 15,
+              "sustain_rate": 1,
+              "sustain_level": 8,
+              "release_rate": 9
+            },
+            {
+              "multiple": 1,
+              "detune": 2,
+              "total_level": 8,
+              "attack_rate": 31,
+              "decay_rate": 9,
+              "sustain_rate": 1,
+              "sustain_level": 4,
+              "release_rate": 8
+            }
+          ]
+        },
+        "unison": {
+          "voices": 2,
+          "detune": 8
+        },
+        "volume": 62,
+        "pan": 0,
+        "reverb_send": 36
+      }
+    },
+    {
+      "id": "pc98_opna_cyber_pad",
+      "category": "pad",
+      "description": "Nocturnal Neo-Tokyo 4-operator FM poly-synth pad with lush stereo detune and shimmering upper harmonics.",
+      "instrument": {
+        "name": "PC-98 OPNA Cyber Pad",
+        "voice": {
+          "type": "fm",
+          "algorithm": 4,
+          "feedback": 4,
+          "operators": [
+            {
+              "multiple": 2,
+              "detune": 1,
+              "total_level": 34,
+              "attack_rate": 18,
+              "decay_rate": 4,
+              "sustain_rate": 0,
+              "sustain_level": 3,
+              "release_rate": 6
+            },
+            {
+              "multiple": 1,
+              "detune": 1,
+              "total_level": 4,
+              "attack_rate": 16,
+              "decay_rate": 3,
+              "sustain_rate": 0,
+              "sustain_level": 2,
+              "release_rate": 6
+            },
+            {
+              "multiple": 1,
+              "detune": -2,
+              "total_level": 36,
+              "attack_rate": 17,
+              "decay_rate": 4,
+              "sustain_rate": 0,
+              "sustain_level": 3,
+              "release_rate": 6
+            },
+            {
+              "multiple": 1,
+              "detune": -1,
+              "total_level": 6,
+              "attack_rate": 16,
+              "decay_rate": 3,
+              "sustain_rate": 0,
+              "sustain_level": 2,
+              "release_rate": 6
+            }
+          ]
+        },
+        "vibrato": {
+          "depth": 14,
+          "rate": 46,
+          "delay": 200
+        },
+        "unison": {
+          "voices": 3,
+          "detune": 12
+        },
+        "volume": 52,
+        "pan": 0,
+        "reverb_send": 44
+      }
+    },
+    {
+      "id": "pc98_ssg_pulse_hook",
+      "category": "lead",
+      "description": "Sharp YM2608 SSG 25%-duty pulse hook with octave-locked attack transient for authentic PC-98 counter-melodies.",
+      "instrument": {
+        "name": "PC-98 SSG Pulse Hook",
+        "voice": {
+          "type": "pulse",
+          "duty": "quarter"
+        },
+        "envelope": {
+          "attack": 1,
+          "decay": 210,
+          "sustain": 58,
+          "release": 130
+        },
+        "pitch_envelope": {
+          "semitones": 12,
+          "time": 16
+        },
+        "vibrato": {
+          "depth": 16,
+          "rate": 58,
+          "delay": 110
+        },
+        "unison": {
+          "voices": 2,
+          "detune": 9
+        },
+        "filter": {
+          "mode": "low_pass",
+          "cutoff": 2800,
+          "resonance": 22,
+          "envelope_depth": 20
+        },
+        "volume": 64,
+        "pan": 0,
+        "reverb_send": 26
+      }
+    },
+    {
+      "id": "pc98_fm_sub_drop",
+      "category": "bass",
+      "description": "Heavy NEC PC-98 cyber-FM melodic bass drop with 1-octave downward transient punch and growling FM feedback.",
+      "instrument": {
+        "name": "PC-98 FM Bass Drop",
+        "voice": {
+          "type": "fm",
+          "algorithm": 4,
+          "feedback": 6,
+          "operators": [
+            {
+              "multiple": 1,
+              "detune": 0,
+              "total_level": 18,
+              "attack_rate": 31,
+              "decay_rate": 10,
+              "sustain_rate": 1,
+              "sustain_level": 4,
+              "release_rate": 9
+            },
+            {
+              "multiple": 1,
+              "detune": 0,
+              "total_level": 0,
+              "attack_rate": 31,
+              "decay_rate": 5,
+              "sustain_rate": 1,
+              "sustain_level": 2,
+              "release_rate": 9
+            },
+            {
+              "multiple": 2,
+              "detune": 1,
+              "total_level": 28,
+              "attack_rate": 31,
+              "decay_rate": 12,
+              "sustain_rate": 1,
+              "sustain_level": 5,
+              "release_rate": 9
+            },
+            {
+              "multiple": 1,
+              "detune": -1,
+              "total_level": 6,
+              "attack_rate": 31,
+              "decay_rate": 5,
+              "sustain_rate": 1,
+              "sustain_level": 2,
+              "release_rate": 9
+            }
+          ]
+        },
+        "pitch_envelope": {
+          "semitones": 12,
+          "time": 85
+        },
+        "volume": 74,
+        "pan": 0,
+        "reverb_send": 0
+      }
+    }
+  ]
+}
