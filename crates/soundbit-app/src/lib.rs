@@ -23,7 +23,7 @@ pub use editor::{Editor, Origin, Outcome, ProfilePolicy};
 pub use error::{AppError, CommandError, PlaybackError};
 pub use playback::Playback;
 pub use presets::PresetLibrary;
-pub use session::{ExportReport, Session, SharedSession, TrackLevel};
+pub use session::{ExportReport, Session, SharedSession, TrackLevel, export_stereo_samples_wav};
 pub use soundbit_core as model;
 pub use soundbit_engine::RenderOptions;
 pub use soundbit_formats::Preset;

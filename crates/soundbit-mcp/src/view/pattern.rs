@@ -19,12 +19,27 @@ pub(crate) fn pattern_view(song: &Song, id: PatternId) -> Value {
         .notes()
         .iter()
         .map(|note| {
-            json!({
+            let mut obj = json!({
                 "note": note.pitch.to_string(),
                 "start": note.start,
                 "length": note.length.get(),
                 "velocity": note.velocity.get(),
-            })
+            });
+            if let Value::Object(map) = &mut obj {
+                if note.detune_cents != 0 {
+                    map.insert("detune_cents".to_owned(), json!(note.detune_cents));
+                }
+                if note.detune_milli_hz != 0 {
+                    map.insert(
+                        "detune_hz".to_owned(),
+                        json!(f64::from(note.detune_milli_hz) / 1_000.0),
+                    );
+                }
+                if note.slide_semitones != 0 {
+                    map.insert("slide_semitones".to_owned(), json!(note.slide_semitones));
+                }
+            }
+            obj
         })
         .collect();
     let placed_at: Vec<Value> = song

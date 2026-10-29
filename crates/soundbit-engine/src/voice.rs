@@ -27,6 +27,8 @@ pub(crate) struct Voice {
     sample_rate: f64,
     /// Whether the pitch moves, so the layers must be retuned every sample.
     modulated: bool,
+    slide_semitones: f64,
+    duration_samples: u64,
     pitch: PitchMod,
     filter: VoiceFilter,
     envelope: Adsr,
@@ -50,7 +52,10 @@ impl Voice {
     // RT-SAFE
     pub(crate) fn start(&mut self, patch: &Patch, event: &NoteEvent, sample_rate: f64) {
         let unison = &patch.unison;
-        self.hz = note_frequency(event.pitch);
+        let base_hz = note_frequency(event.pitch)
+            * semitone_ratio(f64::from(event.detune_cents) / 100.0)
+            + f64::from(event.detune_milli_hz) / 1_000.0;
+        self.hz = base_hz.max(1.0);
         self.sample_rate = sample_rate;
         self.layer_count = unison.layers.clamp(1, MAX_UNISON);
         self.layer_ratios = unison.ratios;
@@ -64,7 +69,9 @@ impl Voice {
         {
             layer.start_at(&patch.source, self.hz * ratio, sample_rate, phase);
         }
-        self.modulated = !patch.pitch.is_static();
+        self.slide_semitones = f64::from(event.slide_semitones);
+        self.duration_samples = event.off.saturating_sub(event.on).max(1);
+        self.modulated = !patch.pitch.is_static() || event.slide_semitones != 0;
         self.pitch.start(patch.pitch, sample_rate);
         self.filter.start(patch.filter, sample_rate);
         self.envelope.set_params(patch.envelope);
@@ -98,7 +105,7 @@ impl Voice {
         }
 
         if self.modulated {
-            self.retune();
+            self.retune(now);
         }
         let sample = self.layers_sample();
         let envelope = self.envelope.next_level();
@@ -121,8 +128,19 @@ impl Voice {
     }
 
     // RT-SAFE
-    fn retune(&mut self) {
-        let hz = self.hz * semitone_ratio(self.pitch.next_offset());
+    #[allow(
+        clippy::cast_precision_loss,
+        reason = "sample counts fit comfortably in f64 mantissa for audio durations"
+    )]
+    fn retune(&mut self, now: u64) {
+        let mut semitone_offset = self.pitch.next_offset();
+        if self.slide_semitones != 0.0 {
+            let progress =
+                (now.saturating_sub(self.started_at) as f64 / self.duration_samples as f64)
+                    .clamp(0.0, 1.0);
+            semitone_offset += self.slide_semitones * progress;
+        }
+        let hz = (self.hz * semitone_ratio(semitone_offset)).max(1.0);
         for (layer, ratio) in self
             .layers
             .iter_mut()

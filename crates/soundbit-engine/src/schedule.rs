@@ -20,6 +20,12 @@ pub(crate) struct NoteEvent {
     pub(crate) pitch: u8,
     /// Velocity as a gain in `(0, 1]`.
     pub(crate) velocity: f32,
+    /// Microtonal pitch offset in cents.
+    pub(crate) detune_cents: i16,
+    /// Fine frequency offset in millihertz.
+    pub(crate) detune_milli_hz: i32,
+    /// Continuous pitch glide in semitones over the note duration.
+    pub(crate) slide_semitones: i8,
 }
 
 /// Everything one track plays, in start order.
@@ -188,6 +194,9 @@ fn plan_track(
                 patch,
                 pitch: note.pitch.get(),
                 velocity: f32::from(note.velocity.get()) / 127.0,
+                detune_cents: note.detune_cents,
+                detune_milli_hz: note.detune_milli_hz,
+                slide_semitones: note.slide_semitones,
             });
         }
     }

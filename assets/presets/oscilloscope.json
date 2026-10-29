@@ -1,0 +1,303 @@
+{
+  "format": "soundbit-presets",
+  "format_version": 1,
+  "source": "SoundBit Headless Fork (ahmetdenizyilmaz): Oscilloscope XY & Harmonic Vector synthesis collection, GPL-3.0-or-later",
+  "presets": [
+    {
+      "id": "osc_pure_sine_xy",
+      "category": "lead",
+      "description": "Pure phase-coherent sine oscillator with micro-detuned unison for clean rotating Lissajous figures.",
+      "instrument": {
+        "name": "Oscilloscope Pure XY",
+        "voice": {
+          "type": "sine"
+        },
+        "envelope": {
+          "attack": 4,
+          "decay": 200,
+          "sustain": 90,
+          "release": 120
+        },
+        "unison": {
+          "voices": 2,
+          "detune": 4
+        },
+        "volume": 80,
+        "pan": 0,
+        "reverb_send": 0
+      }
+    },
+    {
+      "id": "osc_harmonic_3_2",
+      "category": "lead",
+      "description": "Single-cycle wavetable encoding a phase-locked 3:2 harmonic ratio for geometric oscilloscope knots.",
+      "instrument": {
+        "name": "Oscilloscope 3:2 Knot",
+        "voice": {
+          "type": "wavetable",
+          "samples": [
+            8, 12, 15, 14, 11, 8, 6, 7,
+            10, 13, 14, 11, 7, 3, 1, 2,
+            5, 8, 9, 7, 4, 2, 3, 6,
+            9, 10, 8, 5, 2, 0, 2, 5
+          ]
+        },
+        "envelope": {
+          "attack": 2,
+          "decay": 220,
+          "sustain": 80,
+          "release": 100
+        },
+        "unison": {
+          "voices": 2,
+          "detune": 6
+        },
+        "volume": 74,
+        "pan": 0,
+        "reverb_send": 10
+      }
+    },
+    {
+      "id": "osc_harmonic_4_3",
+      "category": "lead",
+      "description": "Phase-locked 4:3 harmonic wavetable voice for rotating 3D oscilloscope crown patterns.",
+      "instrument": {
+        "name": "Oscilloscope 4:3 Crown",
+        "voice": {
+          "type": "wavetable",
+          "samples": [
+            8, 13, 15, 12, 8, 5, 6, 10,
+            13, 12, 8, 4, 2, 5, 9, 11,
+            9, 5, 3, 5, 9, 12, 10, 6,
+            2, 0, 3, 7, 9, 7, 4, 5
+          ]
+        },
+        "envelope": {
+          "attack": 3,
+          "decay": 240,
+          "sustain": 75,
+          "release": 120
+        },
+        "unison": {
+          "voices": 2,
+          "detune": 8
+        },
+        "volume": 74,
+        "pan": 0,
+        "reverb_send": 12
+      }
+    },
+    {
+      "id": "osc_vector_saw_lead",
+      "category": "lead",
+      "description": "Crisp geometric ramp wave with resonant bandpass edge for sharp vector graphics music.",
+      "instrument": {
+        "name": "Oscilloscope Vector Saw",
+        "voice": {
+          "type": "sawtooth"
+        },
+        "envelope": {
+          "attack": 1,
+          "decay": 180,
+          "sustain": 70,
+          "release": 90
+        },
+        "unison": {
+          "voices": 2,
+          "detune": 7
+        },
+        "filter": {
+          "mode": "low_pass",
+          "cutoff": 2600,
+          "resonance": 55,
+          "envelope_depth": 30
+        },
+        "volume": 66,
+        "pan": 0,
+        "reverb_send": 15
+      }
+    },
+    {
+      "id": "osc_lissajous_bass",
+      "category": "bass",
+      "description": "Phase-locked FM harmonic bass (Jerobeam Fenderson style) with rich integer-ratio overtones.",
+      "instrument": {
+        "name": "Lissajous FM Bass",
+        "voice": {
+          "type": "fm",
+          "algorithm": 4,
+          "feedback": 3,
+          "operators": [
+            {
+              "multiple": 2,
+              "detune": 1,
+              "total_level": 18,
+              "attack_rate": 31,
+              "decay_rate": 14,
+              "sustain_rate": 4,
+              "sustain_level": 3,
+              "release_rate": 10
+            },
+            {
+              "multiple": 1,
+              "detune": 0,
+              "total_level": 0,
+              "attack_rate": 31,
+              "decay_rate": 10,
+              "sustain_rate": 2,
+              "sustain_level": 2,
+              "release_rate": 9
+            },
+            {
+              "multiple": 3,
+              "detune": -1,
+              "total_level": 22,
+              "attack_rate": 31,
+              "decay_rate": 16,
+              "sustain_rate": 6,
+              "sustain_level": 4,
+              "release_rate": 10
+            },
+            {
+              "multiple": 1,
+              "detune": 1,
+              "total_level": 4,
+              "attack_rate": 31,
+              "decay_rate": 10,
+              "sustain_rate": 2,
+              "sustain_level": 2,
+              "release_rate": 9
+            }
+          ]
+        },
+        "filter": {
+          "mode": "low_pass",
+          "cutoff": 1400,
+          "resonance": 30,
+          "envelope_depth": 24
+        },
+        "volume": 75,
+        "pan": 0,
+        "reverb_send": 0
+      }
+    },
+    {
+      "id": "osc_spiral_pluck",
+      "category": "keys",
+      "description": "Fast-decay harmonic FM pluck with slight operator detuning that draws spiralling oscilloscope petals.",
+      "instrument": {
+        "name": "Oscilloscope Spiral Pluck",
+        "voice": {
+          "type": "fm",
+          "algorithm": 5,
+          "feedback": 2,
+          "operators": [
+            {
+              "multiple": 3,
+              "detune": 2,
+              "total_level": 16,
+              "attack_rate": 31,
+              "decay_rate": 18,
+              "sustain_rate": 8,
+              "sustain_level": 5,
+              "release_rate": 11
+            },
+            {
+              "multiple": 1,
+              "detune": 0,
+              "total_level": 0,
+              "attack_rate": 31,
+              "decay_rate": 15,
+              "sustain_rate": 5,
+              "sustain_level": 4,
+              "release_rate": 10
+            },
+            {
+              "multiple": 2,
+              "detune": -2,
+              "total_level": 6,
+              "attack_rate": 31,
+              "decay_rate": 16,
+              "sustain_rate": 6,
+              "sustain_level": 4,
+              "release_rate": 10
+            },
+            {
+              "multiple": 4,
+              "detune": 1,
+              "total_level": 12,
+              "attack_rate": 31,
+              "decay_rate": 19,
+              "sustain_rate": 8,
+              "sustain_level": 6,
+              "release_rate": 11
+            }
+          ]
+        },
+        "volume": 68,
+        "pan": 0,
+        "reverb_send": 22
+      }
+    },
+    {
+      "id": "osc_binaural_drone",
+      "category": "pad",
+      "description": "Hypnotic beating triangle-wave interference drone for continuous Hz space beds.",
+      "instrument": {
+        "name": "Binaural Hz Drone",
+        "voice": {
+          "type": "triangle"
+        },
+        "envelope": {
+          "attack": 80,
+          "decay": 400,
+          "sustain": 88,
+          "release": 350
+        },
+        "vibrato": {
+          "depth": 12,
+          "rate": 25,
+          "delay": 0
+        },
+        "unison": {
+          "voices": 3,
+          "detune": 9
+        },
+        "volume": 72,
+        "pan": 0,
+        "reverb_send": 28
+      }
+    },
+    {
+      "id": "osc_laser_grid",
+      "category": "lead",
+      "description": "High-Q resonant pitch-swept pulse voice for sharp geometric vector bursts.",
+      "instrument": {
+        "name": "Vector Laser Grid",
+        "voice": {
+          "type": "pulse",
+          "duty": "eighth"
+        },
+        "envelope": {
+          "attack": 1,
+          "decay": 150,
+          "sustain": 45,
+          "release": 80
+        },
+        "pitch_envelope": {
+          "semitones": 12,
+          "time": 45
+        },
+        "filter": {
+          "mode": "low_pass",
+          "cutoff": 2200,
+          "resonance": 65,
+          "envelope_depth": 36
+        },
+        "volume": 65,
+        "pan": 0,
+        "reverb_send": 18
+      }
+    }
+  ]
+}

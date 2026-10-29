@@ -24,10 +24,6 @@ const ALLOWED: &[(&str, &[&str])] = &[
         "soundbit-cli",
         &["soundbit-app", "soundbit-mcp", "soundbit-audio-io"],
     ),
-    (
-        "soundbit-desktop",
-        &["soundbit-app", "soundbit-mcp", "soundbit-audio-io"],
-    ),
     ("xtask", &[]),
 ];
 

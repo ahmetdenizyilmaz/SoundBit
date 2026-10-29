@@ -11,6 +11,7 @@ mod preset;
 mod reference;
 mod song;
 mod track;
+mod wave;
 
 use std::fmt::Display;
 
@@ -36,6 +37,7 @@ pub(crate) fn router() -> ToolRouter<SoundBitServer> {
         + SoundBitServer::track_tools()
         + SoundBitServer::history_tools()
         + SoundBitServer::file_tools()
+        + SoundBitServer::wave_tools()
 }
 
 /// A successful result carrying pretty-printed JSON.

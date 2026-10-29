@@ -1,0 +1,261 @@
+{
+  "format": "soundbit-presets",
+  "format_version": 1,
+  "source": "SoundBit Headless Fork (ahmetdenizyilmaz): Video Motion, Scene-Cut, Zoom & Object Scale Sync SFX collection, GPL-3.0-or-later",
+  "presets": [
+    {
+      "id": "sfx_zoom_in_riser",
+      "category": "sfx",
+      "description": "Upward 2-octave pitch sweep with opening resonant filter synced to camera zoom-ins.",
+      "instrument": {
+        "name": "Zoom-In Riser",
+        "voice": {
+          "type": "sawtooth"
+        },
+        "envelope": {
+          "attack": 10,
+          "decay": 360,
+          "sustain": 70,
+          "release": 140
+        },
+        "pitch_envelope": {
+          "semitones": -24,
+          "time": 320
+        },
+        "unison": {
+          "voices": 3,
+          "detune": 20
+        },
+        "filter": {
+          "mode": "low_pass",
+          "cutoff": 700,
+          "resonance": 50,
+          "envelope_depth": 44
+        },
+        "volume": 66,
+        "pan": 0,
+        "reverb_send": 30
+      }
+    },
+    {
+      "id": "sfx_zoom_out_fall",
+      "category": "sfx",
+      "description": "Downward 2-octave pitch dive with closing filter synced to camera zoom-outs.",
+      "instrument": {
+        "name": "Zoom-Out Fall",
+        "voice": {
+          "type": "sawtooth"
+        },
+        "envelope": {
+          "attack": 2,
+          "decay": 340,
+          "sustain": 55,
+          "release": 140
+        },
+        "pitch_envelope": {
+          "semitones": 24,
+          "time": 300
+        },
+        "unison": {
+          "voices": 3,
+          "detune": 18
+        },
+        "filter": {
+          "mode": "low_pass",
+          "cutoff": 1600,
+          "resonance": 45,
+          "envelope_depth": -32
+        },
+        "volume": 66,
+        "pan": 0,
+        "reverb_send": 28
+      }
+    },
+    {
+      "id": "sfx_object_inflate",
+      "category": "sfx",
+      "description": "Expanding warm harmonic swell (+12 semitone rise + unison bloom) for growing/inflating objects.",
+      "instrument": {
+        "name": "Object Inflate Swell",
+        "voice": {
+          "type": "pulse",
+          "duty": "half"
+        },
+        "envelope": {
+          "attack": 15,
+          "decay": 260,
+          "sustain": 68,
+          "release": 150
+        },
+        "pitch_envelope": {
+          "semitones": -12,
+          "time": 220
+        },
+        "unison": {
+          "voices": 4,
+          "detune": 26
+        },
+        "filter": {
+          "mode": "low_pass",
+          "cutoff": 900,
+          "resonance": 40,
+          "envelope_depth": 38
+        },
+        "volume": 65,
+        "pan": 0,
+        "reverb_send": 25
+      }
+    },
+    {
+      "id": "sfx_object_shrink",
+      "category": "sfx",
+      "description": "Snappy contracting pitch zip (+19 semitone drop into tight pluck) for shrinking/collapsing objects.",
+      "instrument": {
+        "name": "Object Shrink Zip",
+        "voice": {
+          "type": "pulse",
+          "duty": "quarter"
+        },
+        "envelope": {
+          "attack": 1,
+          "decay": 150,
+          "sustain": 15,
+          "release": 70
+        },
+        "pitch_envelope": {
+          "semitones": 19,
+          "time": 110
+        },
+        "filter": {
+          "mode": "low_pass",
+          "cutoff": 1800,
+          "resonance": 55,
+          "envelope_depth": -28
+        },
+        "volume": 68,
+        "pan": 0,
+        "reverb_send": 15
+      }
+    },
+    {
+      "id": "sfx_scene_cut_bomb",
+      "category": "bass",
+      "description": "Cinematic sub-bass impact bomb (+36 semitone transient slam) for major video scene cuts.",
+      "instrument": {
+        "name": "Scene-Cut Sub Bomb",
+        "voice": {
+          "type": "triangle"
+        },
+        "envelope": {
+          "attack": 1,
+          "decay": 420,
+          "sustain": 65,
+          "release": 180
+        },
+        "pitch_envelope": {
+          "semitones": 36,
+          "time": 95
+        },
+        "filter": {
+          "mode": "low_pass",
+          "cutoff": 320,
+          "resonance": 40,
+          "envelope_depth": 30
+        },
+        "volume": 90,
+        "pan": 0,
+        "reverb_send": 0
+      }
+    },
+    {
+      "id": "sfx_motion_blip",
+      "category": "sfx",
+      "description": "Ultra-tight melodic telemetry blip for fast frame-to-frame optical flow movement pulses.",
+      "instrument": {
+        "name": "Motion Telemetry Blip",
+        "voice": {
+          "type": "pulse",
+          "duty": "quarter"
+        },
+        "envelope": {
+          "attack": 1,
+          "decay": 75,
+          "sustain": 10,
+          "release": 40
+        },
+        "pitch_envelope": {
+          "semitones": 7,
+          "time": 25
+        },
+        "volume": 66,
+        "pan": 0,
+        "reverb_send": 18
+      }
+    },
+    {
+      "id": "sfx_cyber_reese_drop",
+      "category": "bass",
+      "description": "Heavy 4-voice detuned Reese neuro-bass growl that tears through big drop transitions.",
+      "instrument": {
+        "name": "Cyber Reese Bass Drop",
+        "voice": {
+          "type": "sawtooth"
+        },
+        "envelope": {
+          "attack": 3,
+          "decay": 320,
+          "sustain": 80,
+          "release": 140
+        },
+        "pitch_envelope": {
+          "semitones": 12,
+          "time": 75
+        },
+        "unison": {
+          "voices": 4,
+          "detune": 34
+        },
+        "filter": {
+          "mode": "low_pass",
+          "cutoff": 520,
+          "resonance": 62,
+          "envelope_depth": 38
+        },
+        "volume": 74,
+        "pan": 0,
+        "reverb_send": 0
+      }
+    },
+    {
+      "id": "sfx_glitch_stutter",
+      "category": "percussion",
+      "description": "Metallic short-loop LFSR digital glitch burst for rapid transition stutters.",
+      "instrument": {
+        "name": "Digital Glitch Stutter",
+        "voice": {
+          "type": "noise",
+          "mode": "short"
+        },
+        "envelope": {
+          "attack": 1,
+          "decay": 95,
+          "sustain": 15,
+          "release": 45
+        },
+        "pitch_envelope": {
+          "semitones": 18,
+          "time": 50
+        },
+        "filter": {
+          "mode": "band_pass",
+          "cutoff": 1900,
+          "resonance": 50,
+          "envelope_depth": 24
+        },
+        "volume": 65,
+        "pan": 0,
+        "reverb_send": 12
+      }
+    }
+  ]
+}

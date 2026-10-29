@@ -9,7 +9,7 @@ use soundbit_formats::{Preset, parse_presets};
 use crate::AppError;
 
 /// The preset files, by name.
-const FILES: [(&str, &str); 4] = [
+const FILES: [(&str, &str); 7] = [
     (
         "orchestral.json",
         include_str!("../../../assets/presets/orchestral.json"),
@@ -23,6 +23,18 @@ const FILES: [(&str, &str); 4] = [
         include_str!("../../../assets/presets/chip.json"),
     ),
     ("fm.json", include_str!("../../../assets/presets/fm.json")),
+    (
+        "aloboi.json",
+        include_str!("../../../assets/presets/aloboi.json"),
+    ),
+    (
+        "oscilloscope.json",
+        include_str!("../../../assets/presets/oscilloscope.json"),
+    ),
+    (
+        "motion_sfx.json",
+        include_str!("../../../assets/presets/motion_sfx.json"),
+    ),
 ];
 
 /// A searchable collection of presets.

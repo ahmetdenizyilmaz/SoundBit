@@ -24,6 +24,27 @@ pub struct Note {
     /// Velocity.
     #[serde(default)]
     pub velocity: Velocity,
+    /// Microtonal / fine pitch offset in cents (100 cents = 1 semitone).
+    #[serde(default, skip_serializing_if = "is_zero_i16")]
+    pub detune_cents: i16,
+    /// Fine frequency offset in millihertz (1000 = +1.000 Hz) for Aloboi / Oscilloscope beating and exact Hz tuning.
+    #[serde(default, skip_serializing_if = "is_zero_i32")]
+    pub detune_milli_hz: i32,
+    /// Continuous linear pitch glide in semitones across the note's duration (e.g. +12 for zoom-in/inflation, -12 for zoom-out/shrink).
+    #[serde(default, skip_serializing_if = "is_zero_i8")]
+    pub slide_semitones: i8,
+}
+
+const fn is_zero_i16(val: &i16) -> bool {
+    *val == 0
+}
+
+const fn is_zero_i32(val: &i32) -> bool {
+    *val == 0
+}
+
+const fn is_zero_i8(val: &i8) -> bool {
+    *val == 0
 }
 
 impl Note {
@@ -39,6 +60,9 @@ impl Note {
             start,
             length,
             velocity: Velocity::default(),
+            detune_cents: 0,
+            detune_milli_hz: 0,
+            slide_semitones: 0,
         })
     }
 
@@ -46,6 +70,33 @@ impl Note {
     #[must_use]
     pub const fn with_velocity(self, velocity: Velocity) -> Self {
         Self { velocity, ..self }
+    }
+
+    /// Returns the note with a microtonal pitch offset in cents.
+    #[must_use]
+    pub const fn with_detune_cents(self, detune_cents: i16) -> Self {
+        Self {
+            detune_cents,
+            ..self
+        }
+    }
+
+    /// Returns the note with a fine frequency offset in millihertz (1000 = +1.0 Hz).
+    #[must_use]
+    pub const fn with_detune_milli_hz(self, detune_milli_hz: i32) -> Self {
+        Self {
+            detune_milli_hz,
+            ..self
+        }
+    }
+
+    /// Returns the note with a continuous pitch slide in semitones over its duration.
+    #[must_use]
+    pub const fn with_slide_semitones(self, slide_semitones: i8) -> Self {
+        Self {
+            slide_semitones,
+            ..self
+        }
     }
 
     /// The step right after the note ends.

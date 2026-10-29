@@ -1,0 +1,293 @@
+{
+  "format": "soundbit-presets",
+  "format_version": 1,
+  "source": "SoundBit Headless Fork (ahmetdenizyilmaz): Aloboi analog synth & micro-Hz drift collection, GPL-3.0-or-later",
+  "presets": [
+    {
+      "id": "aloboi_warm_lead",
+      "category": "lead",
+      "description": "Warm nostalgic Aloboi-style analog saw lead with slow tape-wow vibrato, unison chorus, and velvety low-pass filter.",
+      "instrument": {
+        "name": "Aloboi Warm Lead",
+        "voice": {
+          "type": "sawtooth"
+        },
+        "envelope": {
+          "attack": 18,
+          "decay": 320,
+          "sustain": 75,
+          "release": 260
+        },
+        "vibrato": {
+          "depth": 28,
+          "rate": 42,
+          "delay": 120
+        },
+        "unison": {
+          "voices": 3,
+          "detune": 18
+        },
+        "filter": {
+          "mode": "low_pass",
+          "cutoff": 1450,
+          "resonance": 28,
+          "envelope_depth": 26
+        },
+        "volume": 65,
+        "pan": 0,
+        "reverb_send": 35
+      }
+    },
+    {
+      "id": "aloboi_tape_pad",
+      "category": "pad",
+      "description": "Dreamy 4-voice detuned analog polysynth pad with VHS tape drift and warm low-pass bloom.",
+      "instrument": {
+        "name": "Aloboi Tape Pad",
+        "voice": {
+          "type": "sawtooth"
+        },
+        "envelope": {
+          "attack": 140,
+          "decay": 500,
+          "sustain": 80,
+          "release": 450
+        },
+        "vibrato": {
+          "depth": 32,
+          "rate": 36,
+          "delay": 80
+        },
+        "unison": {
+          "voices": 4,
+          "detune": 24
+        },
+        "filter": {
+          "mode": "low_pass",
+          "cutoff": 950,
+          "resonance": 22,
+          "envelope_depth": 18
+        },
+        "volume": 55,
+        "pan": 0,
+        "reverb_send": 48
+      }
+    },
+    {
+      "id": "aloboi_gliding_bass",
+      "category": "bass",
+      "description": "Deep analog synth bass with subtle upward pitch-envelope glide and fat low-pass resonance.",
+      "instrument": {
+        "name": "Aloboi Gliding Bass",
+        "voice": {
+          "type": "sawtooth"
+        },
+        "envelope": {
+          "attack": 4,
+          "decay": 260,
+          "sustain": 78,
+          "release": 110
+        },
+        "pitch_envelope": {
+          "semitones": -5,
+          "time": 65
+        },
+        "unison": {
+          "voices": 2,
+          "detune": 10
+        },
+        "filter": {
+          "mode": "low_pass",
+          "cutoff": 420,
+          "resonance": 45,
+          "envelope_depth": 28
+        },
+        "volume": 78,
+        "pan": 0,
+        "reverb_send": 0
+      }
+    },
+    {
+      "id": "aloboi_nostalgic_pluck",
+      "category": "keys",
+      "description": "Crystal-warm analog pluck with subtle chorus detune and glowing reverb tail for emotional arpeggios.",
+      "instrument": {
+        "name": "Aloboi Pluck",
+        "voice": {
+          "type": "pulse",
+          "duty": "quarter"
+        },
+        "envelope": {
+          "attack": 2,
+          "decay": 240,
+          "sustain": 25,
+          "release": 220
+        },
+        "vibrato": {
+          "depth": 16,
+          "rate": 48,
+          "delay": 100
+        },
+        "unison": {
+          "voices": 3,
+          "detune": 14
+        },
+        "filter": {
+          "mode": "low_pass",
+          "cutoff": 1800,
+          "resonance": 25,
+          "envelope_depth": 32
+        },
+        "volume": 65,
+        "pan": 0,
+        "reverb_send": 38
+      }
+    },
+    {
+      "id": "aloboi_brass_swell",
+      "category": "brass",
+      "description": "Expressive vintage CS-80 style synth brass swell that opens its filter on every chord hit.",
+      "instrument": {
+        "name": "Aloboi Brass Swell",
+        "voice": {
+          "type": "sawtooth"
+        },
+        "envelope": {
+          "attack": 45,
+          "decay": 380,
+          "sustain": 72,
+          "release": 240
+        },
+        "pitch_envelope": {
+          "semitones": -2,
+          "time": 40
+        },
+        "vibrato": {
+          "depth": 22,
+          "rate": 50,
+          "delay": 180
+        },
+        "unison": {
+          "voices": 3,
+          "detune": 16
+        },
+        "filter": {
+          "mode": "low_pass",
+          "cutoff": 800,
+          "resonance": 32,
+          "envelope_depth": 38
+        },
+        "volume": 62,
+        "pan": 0,
+        "reverb_send": 32
+      }
+    },
+    {
+      "id": "aloboi_sub_drop",
+      "category": "bass",
+      "description": "Massive melodic 808 sub-bass drop with a 2-octave downward punch into a sustained sub fundamental.",
+      "instrument": {
+        "name": "Aloboi 808 Sub Drop",
+        "voice": {
+          "type": "triangle"
+        },
+        "envelope": {
+          "attack": 1,
+          "decay": 380,
+          "sustain": 75,
+          "release": 160
+        },
+        "pitch_envelope": {
+          "semitones": 24,
+          "time": 110
+        },
+        "filter": {
+          "mode": "low_pass",
+          "cutoff": 360,
+          "resonance": 35,
+          "envelope_depth": 24
+        },
+        "volume": 88,
+        "pan": 0,
+        "reverb_send": 0
+      }
+    },
+    {
+      "id": "aloboi_cello_solo",
+      "category": "strings",
+      "description": "Rich bowed analog solo voice with warm harmonic wavetable and expressive delayed vibrato.",
+      "instrument": {
+        "name": "Aloboi Cello Synth",
+        "voice": {
+          "type": "wavetable",
+          "samples": [
+            8, 11, 13, 14, 15, 14, 12, 10,
+            11, 13, 14, 13, 11, 9, 7, 5,
+            4, 3, 2, 1, 0, 1, 3, 5,
+            4, 2, 1, 2, 4, 6, 7, 8
+          ]
+        },
+        "envelope": {
+          "attack": 35,
+          "decay": 280,
+          "sustain": 82,
+          "release": 220
+        },
+        "vibrato": {
+          "depth": 30,
+          "rate": 52,
+          "delay": 150
+        },
+        "unison": {
+          "voices": 2,
+          "detune": 12
+        },
+        "filter": {
+          "mode": "low_pass",
+          "cutoff": 1600,
+          "resonance": 20,
+          "envelope_depth": 20
+        },
+        "volume": 72,
+        "pan": 0,
+        "reverb_send": 30
+      }
+    },
+    {
+      "id": "aloboi_dream_arp",
+      "category": "lead",
+      "description": "Shimmering hollow square-wave arpeggiator with stereo unison width and tape flutter.",
+      "instrument": {
+        "name": "Aloboi Dream Arp",
+        "voice": {
+          "type": "pulse",
+          "duty": "half"
+        },
+        "envelope": {
+          "attack": 1,
+          "decay": 160,
+          "sustain": 35,
+          "release": 140
+        },
+        "vibrato": {
+          "depth": 18,
+          "rate": 58,
+          "delay": 60
+        },
+        "unison": {
+          "voices": 2,
+          "detune": 15
+        },
+        "filter": {
+          "mode": "low_pass",
+          "cutoff": 2400,
+          "resonance": 25,
+          "envelope_depth": 28
+        },
+        "volume": 64,
+        "pan": 0,
+        "reverb_send": 34
+      }
+    }
+  ]
+}

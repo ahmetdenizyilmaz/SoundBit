@@ -160,6 +160,53 @@ impl Session {
     }
 }
 
+/// Writes stereo interleaved `[-1.0, 1.0]` samples directly to a 16-bit WAV file and returns peak/RMS analytics.
+///
+/// # Errors
+///
+/// Returns [`AppError::Write`] or [`AppError::Format`] if writing fails.
+#[allow(
+    clippy::cast_precision_loss,
+    reason = "sample counts fit comfortably in f64 mantissa"
+)]
+pub fn export_stereo_samples_wav(
+    path: impl AsRef<Path>,
+    samples: &[f32],
+    sample_rate: u32,
+) -> Result<ExportReport, AppError> {
+    let path = path.as_ref();
+    let file = File::create(path).map_err(|source| AppError::Write {
+        path: path.to_owned(),
+        source,
+    })?;
+    write_wav(BufWriter::new(file), samples, CHANNELS, sample_rate)
+        .map_err(|source| format_error(path, source))?;
+    let mut peak = 0.0_f32;
+    let mut sum_sq = 0.0_f64;
+    for &sample in samples {
+        let abs = sample.abs();
+        if abs > peak {
+            peak = abs;
+        }
+        sum_sq += f64::from(sample) * f64::from(sample);
+    }
+    let frames = (samples.len() / usize::from(CHANNELS)).max(1);
+    let mean_sq = if samples.is_empty() {
+        0.0
+    } else {
+        sum_sq / samples.len() as f64
+    };
+    Ok(ExportReport {
+        duration_seconds: frames as f64 / f64::from(sample_rate.max(1)),
+        peak,
+        rms: root(mean_sq),
+        tracks: vec![TrackLevel {
+            peak,
+            rms: root(mean_sq),
+        }],
+    })
+}
+
 /// Square root of a mean square. Reports are not audio, so they may use `sqrt`.
 #[allow(
     clippy::cast_possible_truncation,
